@@ -1463,3 +1463,148 @@ NameError (uninitialized constant MugshotsController::Mugshot):
 Rendered rescues/_trace (40.6ms)
 Rendered rescues/_request_and_response (1.5ms)
 Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (81.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (19.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMugshots (20100322205512)
+Migrating to CreatePhotos (20100323114448)
+  [4;36;1mSQL (67.4ms)[0m   [0;1mCREATE TABLE `photos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `description` varchar(255), `content_type` varchar(255), `filename` varchar(255), `binary_data` blob, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (41.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100323114448')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (27.9ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mSQL (11.9ms)[0m   [0;1mdescribe `albums`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `albums`[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSHOW FIELDS FROM `covers`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mdescribe `covers`[0m
+  [4;36;1mSQL (9.8ms)[0m   [0;1mSHOW KEYS FROM `covers`[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mSHOW FIELDS FROM `mugshots`[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mdescribe `mugshots`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `mugshots`[0m
+  [4;36;1mSQL (5.1ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mdescribe `photos`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW KEYS FROM `photos`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotoAdminController#index (for 127.0.0.1 at 2010-03-23 11:49:58) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: ):
+  /Users/adrianstainforth/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/adrianstainforth/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/adrianstainforth/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/adrianstainforth/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/adrianstainforth/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/adrianstainforth/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/adrianstainforth/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/adrianstainforth/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/adrianstainforth/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/adrianstainforth/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotoAdminsController#index (for 127.0.0.1 at 2010-03-23 11:50:09) [GET]
+  [4;36;1mPhotoAdmin Load (0.0ms)[0m   [0;1mMysql::Error: Table 'test_upload_development.photo_admins' doesn't exist: SELECT * FROM `photo_admins` [0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: Table 'test_upload_development.photo_admins' doesn't exist: SELECT * FROM `photo_admins` ):
+  app/controllers/photo_admins_controller.rb:5:in `index'
+  /Users/adrianstainforth/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/adrianstainforth/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/adrianstainforth/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/adrianstainforth/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/adrianstainforth/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/adrianstainforth/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/adrianstainforth/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/adrianstainforth/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/adrianstainforth/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/adrianstainforth/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (53.5ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMugshots (20100322205512)
+Migrating to CreatePhotos (20100323114448)
+Migrating to CreatePhotoAdmins (20100323114636)
+  [4;36;1mSQL (81.4ms)[0m   [0;1mCREATE TABLE `photo_admins` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100323114636')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mSQL (3.3ms)[0m   [0;1mdescribe `albums`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mSHOW KEYS FROM `albums`[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mSHOW FIELDS FROM `covers`[0m
+  [4;35;1mSQL (3.2ms)[0m   [0mdescribe `covers`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `covers`[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mSHOW FIELDS FROM `mugshots`[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mdescribe `mugshots`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW KEYS FROM `mugshots`[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW FIELDS FROM `photo_admins`[0m
+  [4;35;1mSQL (3.6ms)[0m   [0mdescribe `photo_admins`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `photo_admins`[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mdescribe `photos`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `photos`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotoAdminsController#index (for 127.0.0.1 at 2010-03-23 11:50:51) [GET]
+  [4;36;1mPhotoAdmin Load (0.4ms)[0m   [0;1mSELECT * FROM `photo_admins` [0m
+Rendering template within layouts/photo_admins
+Rendering photo_admins/index
+Completed in 60ms (View: 54, DB: 1) | 200 OK [http://localhost/photo_admins]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotoAdminsController#index (for 127.0.0.1 at 2010-03-23 11:50:51) [GET]
+  [4;35;1mPhotoAdmin Load (0.6ms)[0m   [0mSELECT * FROM `photo_admins` [0m
+Rendering template within layouts/photo_admins
+Rendering photo_admins/index
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://localhost/photo_admins]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotoAdminsController#new (for 127.0.0.1 at 2010-03-23 11:50:53) [GET]
+  [4;36;1mPhotoAdmin Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `photo_admins`[0m
+Rendering template within layouts/photo_admins
+Rendering photo_admins/new
+
+ActionView::TemplateError (undefined local variable or method `f' for #<ActionView::Base:0x101da4920>) on line #7 of app/views/photo_admins/new.html.erb:
+4: 	<%= form.file_field :image_file %>
+5:     <%= form.text_field :description %>
+6:   <p>
+7:     <%= f.submit 'Create' %>
+8:   </p>
+9: <% end %>
+10: 
+
+    app/views/photo_admins/new.html.erb:7
+    app/views/photo_admins/new.html.erb:3
+    app/controllers/photo_admins_controller.rb:29:in `new'
+    /Users/adrianstainforth/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/adrianstainforth/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/adrianstainforth/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/adrianstainforth/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/adrianstainforth/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/adrianstainforth/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/adrianstainforth/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/adrianstainforth/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/adrianstainforth/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/adrianstainforth/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (111.2ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)

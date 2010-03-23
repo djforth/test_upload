@@ -1,0 +1,12 @@
+<h1>Editing photo_admin</h1>
+
+<% form_for(@photo_admin) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @photo_admin %> |
+<%= link_to 'Back', photo_admins_path %>

@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :photos
+
+  map.resources :photo_admins
+
 
    map.root :controller => "mugshots"
    map.resources :mugshots

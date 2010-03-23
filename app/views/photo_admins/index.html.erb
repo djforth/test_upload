@@ -1,0 +1,18 @@
+<h1>Listing photo_admins</h1>
+
+<table>
+  <tr>
+  </tr>
+
+<% @photo_admins.each do |photo_admin| %>
+  <tr>
+    <td><%= link_to 'Show', photo_admin %></td>
+    <td><%= link_to 'Edit', edit_photo_admin_path(photo_admin) %></td>
+    <td><%= link_to 'Destroy', photo_admin, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New photo_admin', new_photo_admin_path %>
