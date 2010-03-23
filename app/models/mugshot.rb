@@ -1,4 +1,4 @@
-class Mugshots < ActiveRecord::Base
+class Mugshot < ActiveRecord::Base
    
    
    has_attachment :content_type => :image, 

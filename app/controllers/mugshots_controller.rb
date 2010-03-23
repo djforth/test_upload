@@ -15,5 +15,8 @@ class MugshotsController < ApplicationController
 	  end
 	end
 
+  def show
+    @mugshot=Mugshot.find(params[:id])
+  end
 
 end

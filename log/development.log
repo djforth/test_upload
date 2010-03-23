@@ -1608,3 +1608,86 @@ ActionView::TemplateError (undefined local variable or method `f' for #<ActionVi
 Rendered rescues/_trace (111.2ms)
 Rendered rescues/_request_and_response (1.3ms)
 Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (17.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (244.2ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (369.4ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateMugshots (20100322205512)
+  [4;35;1mSQL (143.6ms)[0m   [0mCREATE TABLE `mugshots` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `parent_id` int(11), `content_type` varchar(255), `filename` varchar(255), `thumbnail` varchar(255), `size` int(11), `width` int(11), `height` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (57.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100322205512')[0m
+Migrating to CreatePhotos (20100323114448)
+  [4;35;1mSQL (138.8ms)[0m   [0mCREATE TABLE `photos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `description` varchar(255), `content_type` varchar(255), `filename` varchar(255), `binary_data` blob, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (57.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100323114448')[0m
+Migrating to CreatePhotoAdmins (20100323114636)
+  [4;35;1mSQL (139.6ms)[0m   [0mCREATE TABLE `photo_admins` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (57.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100323114636')[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mSHOW FIELDS FROM `mugshots`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mdescribe `mugshots`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `mugshots`[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mSHOW FIELDS FROM `photo_admins`[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mdescribe `photo_admins`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW KEYS FROM `photo_admins`[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mdescribe `photos`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `photos`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MugshotsController#index (for 127.0.0.1 at 2010-03-23 12:50:32) [GET]
+Rendering mugshots/index
+Completed in 60ms (View: 57, DB: 0) | 200 OK [http://localhost/mugshots]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MugshotsController#create (for 127.0.0.1 at 2010-03-23 12:50:45) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"Ghz9clkXglTTeHPwrcTb2ILkLAFmZnR6AHlzCPlD+tQ=", "mugshot"=>{"uploaded_data"=>#<File:/tmp/RackMultipart11272-0>}}
+
+NameError (uninitialized constant MugshotsController::Mugshot):
+  app/controllers/mugshots_controller.rb:9:in `create'
+
+Rendered rescues/_trace (75.4ms)
+Rendered rescues/_request_and_response (2.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MugshotsController#create (for 127.0.0.1 at 2010-03-23 12:51:15) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"Ghz9clkXglTTeHPwrcTb2ILkLAFmZnR6AHlzCPlD+tQ=", "mugshot"=>{"uploaded_data"=>#<File:/tmp/RackMultipart11272-1>}}
+  [4;36;1mMugshot Columns (3.1ms)[0m   [0;1mSHOW FIELDS FROM `mugshots`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mMugshot Create (6.4ms)[0m   [0;1mINSERT INTO `mugshots` (`size`, `created_at`, `content_type`, `thumbnail`, `updated_at`, `parent_id`, `filename`, `height`, `width`) VALUES(41911, '2010-03-23 12:51:16', 'image/jpeg', NULL, '2010-03-23 12:51:16', NULL, 'Betty-Rubble.jpg', 200, 87)[0m
+  [4;35;1mMugshot Load (0.6ms)[0m   [0mSELECT * FROM `mugshots` WHERE (`mugshots`.`thumbnail` = 'thumb' AND `mugshots`.`parent_id` = 1) LIMIT 1[0m
+  [4;36;1mMugshot Create (8.7ms)[0m   [0;1mINSERT INTO `mugshots` (`size`, `created_at`, `content_type`, `thumbnail`, `updated_at`, `parent_id`, `filename`, `height`, `width`) VALUES(7235, '2010-03-23 12:51:16', 'image/jpeg', 'thumb', '2010-03-23 12:51:16', 1, 'Betty-Rubble_thumb.jpg', 100, 44)[0m
+  [4;35;1mSQL (61.7ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3001/mugshots/1
+Completed in 610ms (DB: 81) | 302 Found [http://localhost/mugshots]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MugshotsController#show (for 127.0.0.1 at 2010-03-23 12:51:16) [GET]
+  Parameters: {"id"=>"1"}
+
+ActionController::UnknownAction (No action responded to show. Actions: create and new):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MugshotsController#show (for 127.0.0.1 at 2010-03-23 12:52:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMugshot Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `mugshots`[0m
+  [4;35;1mMugshot Load (0.7ms)[0m   [0mSELECT * FROM `mugshots` WHERE (`mugshots`.`id` = 1) [0m
+Rendering mugshots/show
+Completed in 66ms (View: 17, DB: 3) | 200 OK [http://localhost/mugshots/1]

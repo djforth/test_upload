@@ -11,26 +11,6 @@
 
 ActiveRecord::Schema.define(:version => 20100323114636) do
 
-  create_table "albums", :force => true do |t|
-    t.string   "title"
-    t.string   "artist"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "covers", :force => true do |t|
-    t.integer  "album_id"
-    t.integer  "parent_id"
-    t.integer  "size"
-    t.integer  "width"
-    t.integer  "height"
-    t.string   "content_type"
-    t.string   "filename"
-    t.string   "thumbnail"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "mugshots", :force => true do |t|
     t.integer  "parent_id"
     t.string   "content_type"
